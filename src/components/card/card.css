@@ -1,0 +1,39 @@
+.card {
+    width: 10rem;
+    margin: 1rem;
+    padding: 1rem;
+    height: max-content;
+    border: double 4px solid;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    font-size: 0.8rem;
+    line-height: 1rem;
+    border-color: rgb(212, 94, 26);
+
+}
+
+.card img {
+    width: 50%;
+    height: 50%;
+    
+
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+
+}
+
+.card p {
+    font-size: 1rem;
+    margin-top: 5px;
+    color: #666;
+    font-style: italic;
+
+}
