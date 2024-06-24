@@ -1,28 +1,35 @@
-import { useState } from 'react'
-import './App.css'
-import { Card } from './components/card/card'
-const URL = ' https://rickandmortyapi.com/api/character'
-
+import { useState } from 'react';
+import './App.css';
+import { Card } from './components/card/card';
+const URL = 'https://rickandmortyapi.com/api/character';
 
 function App() {
+  const [characters, setCharacters] = useState([]);
 
-  const [characters, setCharacters] = useState([
-    { name: 'Homero', image: homero, quote: '¡ OooH !' }
-  ]);
-  
+  const fetchAllCharacters = async () => {
+    try {
+      let allCharacters = [];
+      let nextPage = URL;
 
-  const handleGetApi = async () => {
-    const newCharacters = [];
-    for (let i = 0; i < 9; i++) {
-      const response = await fetch(URL);
-      const data = await response.json();
-      newCharacters.push({
-        name: data[0].character,
-        image: data[0].image,
-        quote: data[0].quote
-      });
+      while (nextPage) {
+        const response = await fetch(nextPage);
+        const data = await response.json();
+        allCharacters = [...allCharacters, ...data.results];
+        nextPage = data.info.next;
+      }
+
+      const formattedCharacters = allCharacters.map(character => ({
+        name: character.name,
+        image: character.image,
+        status: character.status,
+        species: character.species,
+        
+      }));
+
+      setCharacters(formattedCharacters);
+    } catch (error) {
+      console.error('Error fetching data:', error);
     }
-    setCharacters(newCharacters);
   };
 
   return (
@@ -33,13 +40,14 @@ function App() {
             key={index}
             nameCharacter={character.name}
             imgCharacter={character.image}
-            quoteCharacter={character.quote}
+            statusCharacter={character.status}
+            speciesCharacter={character.species}
           />
         ))}
       </div>
-      <button onClick={handleGetApi}>Generar Personajes</button>
+      <button onClick={fetchAllCharacters}>Generar Personajes</button>
     </>
   );
 }
 
-export default App
+export default App;
