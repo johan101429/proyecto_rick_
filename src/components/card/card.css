@@ -1,13 +1,13 @@
-/* components/card/card.css */
+
 .card {
-    background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
+    background-color: #e4c5c5;
+    border: 1px solid #d51313;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.2s;
-    width: 250px;
-    margin: 10px;
+    width: 230px;
+    margin: auto;
     text-align: center;
   }
   
@@ -22,14 +22,38 @@
   }
   
   .card-name {
-    font-size: 1.5em;
+    font-size: 1.1em;
     margin: 10px 0;
-    color: #333;
+    color: #bf1212;
   }
   
   .card-quote {
     font-size: 1em;
     margin: 10px 20px;
-    color: #666;
+    color: #0c0c0c;
   }
-  
+  .card-p{
+    font-size: 1em;
+    margin: 10px 20px;
+    color: #191818;
+  }
+  p.card-status {
+    font-size: 1em;
+    margin: 10px 20px;
+    color: #191818;
+  }
+  p.card-species{
+    font-size: 1em;
+    margin: 10px 20px;
+    color: #191818;
+  }
+  p.card-gender{
+    font-size: 1em;
+    margin: 10px 20px;
+    color: #191818;
+  }
+  p.card-origin{
+    font-size: 1em;
+    margin: 10px 20px;
+    color: #191818;
+  }

@@ -1,20 +1,18 @@
+
 import React from 'react';
+import './card.css';
 
+export const Card = ({ nameCharacter, imgCharacter, statusCharacter, speciesCharacter, genderCharacter, originCharacter }) => (
+  <div className="card">
+    <img src={imgCharacter} alt={nameCharacter} className="card-image" />
+    <h2 className="card-name">{nameCharacter}</h2>
+    <p className="card-status"><strong>Status:</strong> {statusCharacter}</p>
+    <p className="card-species"><strong>Species:</strong> {speciesCharacter}</p>
+    <p className="card-gender"><strong>Gender:</strong> {genderCharacter}</p>
+    <p className="card-origin"><strong>Origin:</strong> {originCharacter}</p>
+  </div>
+);
 
-
-export const Card = ({imgCharacter,nameCharacter,statusCharacter,speciesCharacter}) => {
-  return (
-    
-    <div className="card">
-            <img src={imgCharacter} alt={nameCharacter} />
-            <h3>{nameCharacter}</h3>
-            <p>{statusCharacter}</p>
-            <p>{speciesCharacter}</p>
-        </div>
-  )
-}
-
-export default Card;
 
 
 /*id": 3,

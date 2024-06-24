@@ -23,7 +23,8 @@ function App() {
         image: character.image,
         status: character.status,
         species: character.species,
-        
+        gender: character.gender,
+        origin: character.origin.name,
       }));
 
       setCharacters(formattedCharacters);
@@ -42,6 +43,8 @@ function App() {
             imgCharacter={character.image}
             statusCharacter={character.status}
             speciesCharacter={character.species}
+            genderCharacter={character.gender}
+            originCharacter={character.origin}
           />
         ))}
       </div>
